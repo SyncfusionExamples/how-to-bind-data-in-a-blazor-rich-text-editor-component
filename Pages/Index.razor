@@ -1,0 +1,45 @@
+﻿@page "/"
+
+@*<SfRichTextEditor Value="@Value" />
+
+    @code{
+        public string Value { get; set; } = "<p>Syncfusion Rich Text Editor</p>";
+    }*@
+
+@*<SfRichTextEditor @bind-Value="@Value" />
+    <br />
+    <textarea rows="5" cols="60" @bind="@Value"></textarea>
+
+    @code{
+        public string Value { get; set; } = "<p>Syncfusion Rich Text Editor</p>";
+    }*@
+
+@*<button @onclick="@Update">Update Value</button>
+    <SfRichTextEditor @bind-Value="@Value" />
+    <br />
+    <textarea rows="5" cols="60" @bind="@Value"></textarea>
+
+    @code{
+        public string Value { get; set; } = "<p>Syncfusion Rich Text Editor</p>";
+
+        private void Update()
+        {
+            this.Value = "<p><strong>Dyncamic</strong> Value</p>";
+        }
+    }*@
+	
+<button @onclick="@Update">Update Value</button>
+<br/>
+<SfRichTextEditor @bind-Value="@Value" EditorMode="EditorMode.Markdown"/>
+<br/>
+<textarea rows="5" cols="60" @bind="@Value"></textarea>
+
+@code{
+
+    public string Value { get; set; } = "Syncfusion Rich Text Editor";
+
+    private void Update()
+    {
+        this.Value = "**Dynamic** Value";
+    }
+}
